@@ -1,0 +1,62 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="agenda_alumno_action" name="alumno"
+                     res_model="insti.alumnos" />
+
+        <menuitem name="alumnos" id="menu_alumnos" action="agenda_alumno_action" parent="menu_inicio_insitutos" sequence="10"/>
+
+
+        <record id="agenda_alumno_view_tree" model="ir.ui.view">
+            <field name="name">Lista alumnos</field>
+            <field name="model">insti.alumnos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="provincia" />
+                    <field name="nota" />
+                    <field name="notaDos" />
+                    <field name="notaTres" />
+                    <field name="notaMedia" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="agenda_alumno_view_form" model="ir.ui.view">
+            <field name="name">Formulario de alumnos</field>
+            <field name="model">insti.alumnos</field>
+            <field name="arch" type="xml">
+                <form>
+                      <header>
+                        <button name="limpiar" type="object" string="Limpia" class="oe_highlight" />
+                        <button name="limpia_todo" type="object" string="Limpia todo" class="oe_highlight" />
+                    </header>
+
+                    <group>
+                    <field name="dni" />
+                    <field name="nombre" />
+                    <field name="apellidos" />
+                    <field name="provincia" />
+                    <field name="nota" />
+                    <field name="notaDos" />
+                    <field name="notaTres" />
+                    <field name="notaMedia" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="agenda_alumno_view_search" model="ir.ui.view">
+            <field name="name">Busqueda alumnos</field>
+            <field name="model">insti.alumnos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="dni" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

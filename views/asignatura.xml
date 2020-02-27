@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="agenda_asignatura_action" name="asignatura"
+                     res_model="insti.asignaturas" />
+
+        <menuitem name="asignaturas" id="menu_asignaturas" action="agenda_asignatura_action" parent="menu_inicio_insitutos" sequence="10"/>
+
+
+        <record id="agenda_asignatura_view_tree" model="ir.ui.view">
+            <field name="name">Lista asignaturas</field>
+            <field name="model">insti.asignaturas</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="instituto" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="agenda_asignatura_view_form" model="ir.ui.view">
+            <field name="name">Formulario de asignaturas</field>
+            <field name="model">insti.asignaturas</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="instituto" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="agenda_asignatura_view_search" model="ir.ui.view">
+            <field name="name">Busqueda asignaturas</field>
+            <field name="model">insti.asignaturas</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    <field name="instituto" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>

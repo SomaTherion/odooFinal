@@ -1,0 +1,48 @@
+<?xml version="1.0" encoding="utf-8" ?>
+<odoo>
+    <data>
+        <act_window id="agenda_instituto_action" name="instituto"
+                     res_model="insti.institutos" />
+
+        <menuitem name="Gestion Instituto" id="menu_agenda" sequence="10" />
+        <menuitem name="Gestion Alumnos" id="menu_inicio_insitutos" parent="menu_agenda" sequence="10"/>
+        <menuitem name="institutos" id="menu_instituto" action="agenda_instituto_action" parent="menu_inicio_insitutos" sequence="10"/>
+
+
+        <record id="agenda_instituto_view_tree" model="ir.ui.view">
+            <field name="name">Lista institutos</field>
+            <field name="model">insti.institutos</field>
+            <field name="arch" type="xml">
+                <tree>
+                    <field name="cod" />
+                    <field name="nombre" />
+                </tree>
+            </field>
+        </record>
+
+        <record id="agenda_instituto_view_form" model="ir.ui.view">
+            <field name="name">Formulario de institutos</field>
+            <field name="model">insti.institutos</field>
+            <field name="arch" type="xml">
+                <form>
+                    <group>
+                    <field name="cod" />
+                    <field name="nombre" />
+                    </group>
+                </form>
+            </field>
+        </record>
+
+        <record id="agenda_instituto_view_search" model="ir.ui.view">
+            <field name="name">Busqueda institutos</field>
+            <field name="model">insti.institutos</field>
+            <field name="arch" type="xml">
+                <search>
+                    <field name="cod" />
+                    <field name="nombre" />
+                </search>
+            </field>
+        </record>
+
+    </data>
+</odoo>
